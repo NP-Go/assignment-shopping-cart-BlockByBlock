@@ -20,11 +20,9 @@ func WelcomeMenu() {
 
 	fmt.Printf("%s", msg)
 	fmt.Println("Select your choice: ")
-
-	getMenuInput()
 }
 
-func getMenuInput() int {
+func GetMenuInput() int {
 	input := 0
 	if _, err := fmt.Scan(&input); err != nil {
 		fmt.Println("Input failed")
