@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/utils"
 )
 
 func init() {
@@ -10,5 +12,5 @@ func init() {
 }
 
 func main() {
-	welcomeMenu()
+	utils.WelcomeMenu()
 }

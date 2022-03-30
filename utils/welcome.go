@@ -1,9 +1,11 @@
 package utils
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // printed on runtime prompt
-func welcomeMenu() {
+func WelcomeMenu() {
 	msg := `
 	Shopping List Application
 	==========================
