@@ -2,7 +2,11 @@ package main
 
 import "fmt"
 
-func main(){
-  //insert code here
-  
+func init() {
+	// init struct here
+	fmt.Println("")
+}
+
+func main() {
+	welcomeMenu()
 }
