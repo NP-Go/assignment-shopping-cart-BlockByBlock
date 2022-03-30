@@ -5,7 +5,7 @@ import "fmt"
 func Select(input *int) {
 	switch *input {
 	case 1:
-		ViewShoppingList()
+		viewShoppingList()
 	case 2:
 		fmt.Println("It's 2!")
 	case 3:

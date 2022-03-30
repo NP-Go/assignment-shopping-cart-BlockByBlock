@@ -2,6 +2,6 @@ package selections
 
 import "fmt"
 
-func ViewShoppingList() {
-	fmt.Println("Hello")
+func viewShoppingList() {
+	fmt.Println("Shopping List Contents:")
 }
