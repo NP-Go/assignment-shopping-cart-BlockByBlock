@@ -1,28 +1,20 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/selections"
+	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/types"
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/utils"
 )
 
-type itemInfo struct {
-	category int
-	qty      int
-	unitCost float64
-}
-
-type storeInfo struct {
-	categories []string
-	itemMap    map[string]itemInfo
-}
-
-var thisShop storeInfo
-
-func init() {
-	thisShop.categories = []string{"Household", "Food", "Drinks"}
-}
-
 func main() {
+	thisShop := new(types.StoreInfo)
+	thisShop.SetCategories([]string{"Household", "Food", "Drinks"})
+
+	// temp
+	fmt.Println(thisShop)
+
 	utils.WelcomeMenu()
 	for {
 		selection := utils.GetMenuInput()
