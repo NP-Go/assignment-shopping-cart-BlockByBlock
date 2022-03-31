@@ -15,9 +15,9 @@ func main() {
 	// temp
 	fmt.Println(thisShop)
 
-	utils.WelcomeMenu()
 	for {
+		utils.WelcomeMenu()
 		selection := utils.GetMenuInput()
-		selections.Select(&selection)
+		selections.Select(&selection, thisShop)
 	}
 }
