@@ -11,8 +11,9 @@ func (storeInfo *StoreInfo) InitStoreInfo() {
 	storeInfo.Categories = []string{"Household", "Food", "Drinks"}
 	storeInfo.AllItemInfo = make(map[string]ItemInfo)
 
-	// default item - lazy
-	storeInfo.AllItemInfo["egg"] = ItemInfo{Category: 0, Qty: 10, UnitCost: 2.55}
+	// default items - lazy
+	storeInfo.AllItemInfo["egg"] = ItemInfo{Category: 1, Qty: 10, UnitCost: 2.55}
+	storeInfo.AllItemInfo["tea"] = ItemInfo{Category: 2, Qty: 37, UnitCost: 1.20}
 }
 
 func (storeInfo *StoreInfo) AddCategory(newCategory *string) {

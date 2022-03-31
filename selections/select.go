@@ -9,7 +9,7 @@ import (
 func Select(input *int, shoplist *types.StoreInfo) {
 	switch *input {
 	case 1:
-		viewShoppingList()
+		viewShoppingList(shoplist)
 	case 2:
 		fmt.Println("It's 2!")
 	case 3:
