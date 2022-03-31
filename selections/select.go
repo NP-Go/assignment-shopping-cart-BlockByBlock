@@ -11,7 +11,7 @@ func Select(input *int, shoplist *types.StoreInfo) {
 	case 1:
 		viewShoppingList(shoplist)
 	case 2:
-		fmt.Println("It's 2!")
+		generateReport(shoplist)
 	case 3:
 		addItem(shoplist)
 	case 4:
