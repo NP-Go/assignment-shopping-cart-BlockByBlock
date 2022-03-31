@@ -4,16 +4,20 @@ import (
 	"fmt"
 
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/selections"
+	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/types"
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/utils"
 )
 
-func init() {
-	// init struct here
-	fmt.Println("")
-}
-
 func main() {
+	thisShop := new(types.StoreInfo)
+	thisShop.SetCategories([]string{"Household", "Food", "Drinks"})
+
+	// temp
+	fmt.Println(thisShop)
+
 	utils.WelcomeMenu()
-	selection := utils.GetMenuInput()
-	selections.Select(&selection)
+	for {
+		selection := utils.GetMenuInput()
+		selections.Select(&selection)
+	}
 }
