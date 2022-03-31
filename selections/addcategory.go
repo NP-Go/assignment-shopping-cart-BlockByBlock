@@ -17,5 +17,5 @@ func addNewCategory(shoplist *types.StoreInfo) {
 		fmt.Println("No Input Found")
 	}
 
-	shoplist.AddCategory(newCategory)
+	shoplist.AddCategory(&newCategory)
 }

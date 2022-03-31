@@ -1,19 +1,19 @@
 package types
 
 type ItemInfo struct {
-	category int
-	qty      int
-	unitCost float64
+	Category int
+	Qty      int
+	UnitCost float64
 }
 
 func (itemInfo *ItemInfo) SetCategory(category int) {
-	itemInfo.category = category
+	itemInfo.Category = category
 }
 
 func (itemInfo *ItemInfo) SetQty(qty int) {
-	itemInfo.qty = qty
+	itemInfo.Qty = qty
 }
 
 func (itemInfo *ItemInfo) SetUnitCost(unitCost float64) {
-	itemInfo.unitCost = unitCost
+	itemInfo.UnitCost = unitCost
 }

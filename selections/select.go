@@ -9,17 +9,17 @@ import (
 func Select(input *int, shoplist *types.StoreInfo) {
 	switch *input {
 	case 1:
-		viewShoppingList()
+		viewShoppingList(shoplist)
 	case 2:
-		fmt.Println("It's 2!")
+		generateReport(shoplist)
 	case 3:
-		fmt.Println("It's 3!")
+		addItem(shoplist)
 	case 4:
-		fmt.Println("It's 4!")
+		modifyItem(shoplist)
 	case 5:
-		fmt.Println("It's 5!")
+		deleteItem(shoplist)
 	case 6:
-		fmt.Println("It's 6!")
+		printCurrentData(shoplist)
 	case 7:
 		addNewCategory(shoplist)
 	default:
