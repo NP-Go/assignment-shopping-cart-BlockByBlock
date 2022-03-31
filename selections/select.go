@@ -17,7 +17,7 @@ func Select(input *int, shoplist *types.StoreInfo) {
 	case 4:
 		fmt.Println("It's 4!")
 	case 5:
-		fmt.Println("It's 5!")
+		deleteItem(shoplist)
 	case 6:
 		fmt.Println("It's 6!")
 	case 7:
