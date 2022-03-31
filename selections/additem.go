@@ -26,5 +26,6 @@ func addItem(shoplist *types.StoreInfo) {
 	fmt.Println("How much does it costs per unit?")
 	fmt.Scanln(&cost)
 
-	shoplist.AddItemInfo(&name, &types.ItemInfo{Category: 0, Qty: qty, UnitCost: cost})
+	categoryIndex := shoplist.GetCategoryIndex(&category)
+	shoplist.AllItemInfo[name] = types.ItemInfo{Category: categoryIndex, Qty: qty, UnitCost: cost}
 }

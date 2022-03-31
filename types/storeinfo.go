@@ -28,7 +28,11 @@ func (storeInfo *StoreInfo) AddCategory(newCategory *string) {
 	fmt.Printf("New category: %s added at index %d", *newCategory, currentSize)
 }
 
-func (storeInfo *StoreInfo) AddItemInfo(itemName *string, itemInfo *ItemInfo) {
-	storeInfo.AllItemInfo[*itemName] = *itemInfo
-	fmt.Printf("Size of map %d", len(storeInfo.AllItemInfo))
+func (storeInfo *StoreInfo) GetCategoryIndex(category *string) int {
+	for i, currCategory := range storeInfo.Categories {
+		if currCategory == *category {
+			return i
+		}
+	}
+	return -1
 }
