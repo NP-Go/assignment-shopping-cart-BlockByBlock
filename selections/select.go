@@ -19,7 +19,7 @@ func Select(input *int, shoplist *types.StoreInfo) {
 	case 5:
 		deleteItem(shoplist)
 	case 6:
-		fmt.Println("It's 6!")
+		printCurrentData(shoplist)
 	case 7:
 		addNewCategory(shoplist)
 	default:
