@@ -13,7 +13,7 @@ func Select(input *int, shoplist *types.StoreInfo) {
 	case 2:
 		fmt.Println("It's 2!")
 	case 3:
-		fmt.Println("It's 3!")
+		addItem(shoplist)
 	case 4:
 		fmt.Println("It's 4!")
 	case 5:
