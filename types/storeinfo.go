@@ -10,6 +10,9 @@ type StoreInfo struct {
 func (storeInfo *StoreInfo) InitStoreInfo() {
 	storeInfo.Categories = []string{"Household", "Food", "Drinks"}
 	storeInfo.AllItemInfo = make(map[string]ItemInfo)
+
+	// default item - lazy
+	storeInfo.AllItemInfo["egg"] = ItemInfo{Category: 0, Qty: 10, UnitCost: 2.55}
 }
 
 func (storeInfo *StoreInfo) AddCategory(newCategory *string) {
