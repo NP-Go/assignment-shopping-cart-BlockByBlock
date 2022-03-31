@@ -10,7 +10,7 @@ import (
 
 func main() {
 	thisShop := new(types.StoreInfo)
-	thisShop.SetCategories([]string{"Household", "Food", "Drinks"})
+	thisShop.InitStoreInfo()
 
 	// temp
 	fmt.Println(thisShop)
