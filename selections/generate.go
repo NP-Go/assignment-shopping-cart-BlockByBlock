@@ -19,16 +19,28 @@ func generateReport(shoplist *types.StoreInfo) {
 
 	if input == 1 {
 		fmt.Println("Total cost by Category")
+
+		for i := 0; i < len(shoplist.Categories); i++ {
+			categoryName := shoplist.Categories[i]
+			totalCost := 0.00
+
+			for _, itemInfo := range shoplist.AllItemInfo {
+				if itemInfo.Category == i {
+					totalCost += float64(itemInfo.Qty) * itemInfo.UnitCost
+				}
+			}
+
+			fmt.Printf("%s cost: %f\n", categoryName, totalCost)
+		}
 	}
 
 	if input == 2 {
 		fmt.Println("List by Category")
 
-		for itemName, itemInfo := range shoplist.AllItemInfo {
-			for i := 0; i < len(shoplist.Categories); i++ {
+		for i := 0; i < len(shoplist.Categories); i++ {
+			categoryName := shoplist.Categories[i]
+			for itemName, itemInfo := range shoplist.AllItemInfo {
 				if itemInfo.Category == i {
-					categoryName := shoplist.Categories[itemInfo.Category]
-
 					fmt.Printf(
 						"Category: %s - Item: %s Quantity: %d Unit Cost: %f\n",
 						categoryName,
@@ -37,7 +49,6 @@ func generateReport(shoplist *types.StoreInfo) {
 						itemInfo.UnitCost,
 					)
 				}
-
 			}
 		}
 	}
