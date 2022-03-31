@@ -1,8 +1,12 @@
 package selections
 
-import "fmt"
+import (
+	"fmt"
 
-func Select(input *int) {
+	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/types"
+)
+
+func Select(input *int, shoplist *types.StoreInfo) {
 	switch *input {
 	case 1:
 		viewShoppingList()
@@ -17,7 +21,7 @@ func Select(input *int) {
 	case 6:
 		fmt.Println("It's 6!")
 	case 7:
-		fmt.Println("It's 7!")
+		addNewCategory(shoplist)
 	default:
 		fmt.Println("Option unavailable!")
 	}
