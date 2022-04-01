@@ -2,6 +2,7 @@ package selections
 
 import (
 	"fmt"
+	"sync"
 
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/types"
 )
@@ -19,19 +20,17 @@ func generateReport(shoplist *types.StoreInfo) {
 
 	if input == 1 {
 		fmt.Println("Total cost by Category")
+		var wg sync.WaitGroup
 
 		for i := 0; i < len(shoplist.Categories); i++ {
-			categoryName := shoplist.Categories[i]
-			totalCost := 0.00
-
-			for _, itemInfo := range shoplist.AllItemInfo {
-				if itemInfo.Category == i {
-					totalCost += float64(itemInfo.Qty) * itemInfo.UnitCost
-				}
-			}
-
-			fmt.Printf("%s cost: %f\n", categoryName, totalCost)
+			wg.Add(1)
+			go func(categoryIndex int) {
+				defer wg.Done()
+				sumOfCategory(shoplist, categoryIndex)
+			}(i)
 		}
+
+		wg.Wait()
 	}
 
 	if input == 2 {
@@ -54,4 +53,24 @@ func generateReport(shoplist *types.StoreInfo) {
 	}
 
 	return
+}
+
+// fan in routine
+func sumOfCategory(shoplist *types.StoreInfo, i int) {
+	categoryName := shoplist.Categories[i]
+	totalCost := 0.00
+	c := make(chan float64)
+
+	for _, itemInfo := range shoplist.AllItemInfo {
+		if itemInfo.Category == i {
+			go calculateItemTotalCost(float64(itemInfo.Qty), itemInfo.UnitCost, c)
+			totalCost += <-c
+		}
+	}
+
+	fmt.Printf("%s cost: %f\n", categoryName, totalCost)
+}
+
+func calculateItemTotalCost(qty float64, unitCost float64, c chan float64) {
+	c <- qty * unitCost
 }

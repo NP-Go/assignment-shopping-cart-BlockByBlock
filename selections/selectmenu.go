@@ -6,10 +6,10 @@ import (
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/types"
 )
 
-func Select(input *int, shoplist *types.StoreInfo) {
+func SelectMenu(input *int, shoplist *types.StoreInfo) {
 	switch *input {
 	case 1:
-		viewShoppingList(shoplist)
+		shoplist.PrintAll()
 	case 2:
 		generateReport(shoplist)
 	case 3:
@@ -19,7 +19,7 @@ func Select(input *int, shoplist *types.StoreInfo) {
 	case 5:
 		deleteItem(shoplist)
 	case 6:
-		printCurrentData(shoplist)
+		shoplist.PrintItemInfo()
 	case 7:
 		addNewCategory(shoplist)
 	default:
