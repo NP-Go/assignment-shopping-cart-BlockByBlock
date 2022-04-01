@@ -25,8 +25,8 @@ func generateReport(shoplist *types.StoreInfo) {
 		for i := 0; i < len(shoplist.Categories); i++ {
 			wg.Add(1)
 			go func(categoryIndex int) {
+				defer wg.Done()
 				sumOfCategory(shoplist, categoryIndex)
-				wg.Done()
 			}(i)
 		}
 
