@@ -6,6 +6,7 @@ import (
 	"github.com/NP-Go/assignment-shopping-cart-BlockByBlock/types"
 )
 
+// warn: cognitive complexity
 func modifyItem(shoplist *types.StoreInfo) {
 	var (
 		itemName    string
