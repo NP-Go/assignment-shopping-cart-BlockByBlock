@@ -47,3 +47,31 @@ func (storeInfo *StoreInfo) GetCategoryIndex(category *string) int {
 	}
 	return -1
 }
+
+func (storeInfo *StoreInfo) PrintAll() {
+	fmt.Println("Shopping List Contents:")
+
+	categoryName := "Others"
+
+	for itemName, itemInfo := range storeInfo.AllItemInfo {
+		if itemInfo.Category != -1 {
+			categoryName = storeInfo.Categories[itemInfo.Category]
+		}
+
+		fmt.Printf(
+			"Category: %s - Item: %s Quantity: %d Unit Cost: %f\n",
+			categoryName,
+			itemName,
+			itemInfo.Qty,
+			itemInfo.UnitCost,
+		)
+	}
+}
+
+func (storeInfo *StoreInfo) PrintItemInfo() {
+	fmt.Println("Print Current Data")
+
+	for itemName, itemInfo := range storeInfo.AllItemInfo {
+		fmt.Printf("%s - %v\n", itemName, itemInfo)
+	}
+}

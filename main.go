@@ -13,6 +13,9 @@ func main() {
 	for {
 		utils.WelcomeMenu()
 		selection := utils.GetMenuInput()
-		selections.Select(&selection, thisShop)
+
+		if selection > 0 {
+			selections.SelectMenu(&selection, thisShop)
+		}
 	}
 }

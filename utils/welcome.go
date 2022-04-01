@@ -26,6 +26,7 @@ func GetMenuInput() int {
 	input := 0
 	if _, err := fmt.Scan(&input); err != nil {
 		fmt.Println("Input failed")
+		return -1
 	}
 
 	return input
