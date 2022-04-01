@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	thisShop := new(types.StoreInfo)
-	thisShop.InitStoreInfo()
+	thisShop := &types.StoreInfo{AllItemInfo: make(map[string]types.ItemInfo)}
+	utils.BuildDefaultConfig(thisShop)
 
 	for {
 		utils.WelcomeMenu()

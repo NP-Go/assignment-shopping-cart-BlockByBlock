@@ -1,0 +1,47 @@
+{
+    "categories": ["Household", "Food", "Drinks"],
+    "items": [
+        {
+            "name": "Fork",
+            "category": "Household",
+            "qty": 4,
+            "unitCost": 3
+        },
+        {
+            "name": "Plates",
+            "category": "Household",
+            "qty": 4,
+            "unitCost": 3
+        },
+        {
+            "name": "Cups",
+            "category": "Household",
+            "qty": 5,
+            "unitCost": 3
+        },
+        {
+            "name": "Bread",
+            "category": "Food",
+            "qty": 5,
+            "unitCost": 2
+        },
+        {
+            "name": "Fork",
+            "category": "Food",
+            "qty": 3,
+            "unitCost": 1
+        },
+        {
+            "name": "Coke",
+            "category": "Drinks",
+            "qty": 5,
+            "unitCost": 2
+        },
+        {
+            "name": "Sprite",
+            "category": "Drinks",
+            "qty": 5,
+            "unitCost": 2
+        }
+    ]
+}
